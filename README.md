@@ -34,4 +34,5 @@ axios.post('http://localhost:5555/speechToText', videoLink)
 ```
 ## UML Sequence Diagram
 ![microservice_UML](https://github.com/danichang1/cs361-microservice/assets/99048536/cc445256-6a5c-4ca3-89d7-473ff4eac06b)
+This diagram shows all the interactions happening between files and external APIs. The program calling the microservices calls /speechToText using Axios and passes in a YouTube link, then the microservice calls YTDL to download the video's audio in a local mp3 file, then that audio file gets sent to AssemblyAI's speech to text API to be processed. The microservice is returned a transcript, and it sends the transcript's text back to the original program.
 
